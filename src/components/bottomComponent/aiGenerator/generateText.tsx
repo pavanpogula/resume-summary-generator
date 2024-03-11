@@ -48,7 +48,9 @@ const GenerateText = () => {
 
     return (
         <>
-            <Button onClick={generateHandler} sx={{ borderRadius: '20px', textTransform: 'none', fontSize: '15px' }} variant="outlined"
+            <Button 
+            disabled={isLoading}
+            onClick={generateHandler} sx={{ borderRadius: '20px', textTransform: 'none', fontSize: '15px' }} variant="outlined"
                 endIcon={isLoading ? <CircularProgress size={30} /> : <AutoAwesomeIcon />}>
                 Generate Summary
             </Button>
