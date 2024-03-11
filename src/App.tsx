@@ -1,24 +1,31 @@
-import React from 'react';
-import logo from './logo.svg';
+import {useRef} from 'react';
+
 import './App.css';
+import { ThemeProvider, createTheme } from '@mui/material/styles';
+import CustomSnackBar from './components/snackbar/customSnackbar';
+import Header from './components/header/header';
+import IntroCardSection from './components/topComponent/introMain';
+import InputCardSection from './components/bottomComponent/mainCard/inputCardSection';
+
+
+
+const darkTheme = createTheme({
+  palette: {
+    mode: 'dark',
+  },
+});
 
 function App() {
+  const dashboardRef  = useRef<HTMLDivElement | null>(null);
+ 
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <CustomSnackBar/>
+     <ThemeProvider theme={darkTheme}>
+      <Header/>
+      <IntroCardSection scrollRef={dashboardRef}/>
+      <InputCardSection scrollRef={dashboardRef}/>
+      </ThemeProvider>
     </div>
   );
 }
