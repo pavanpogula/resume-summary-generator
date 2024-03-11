@@ -20,7 +20,7 @@ const InputCardSection = ({scrollRef}:IntroMainType) => {
       id='main-box-component'
       p={1}
       mx={'auto'}
-      my={10}
+      my={5}
     >
       <Stack spacing={1} sx={{ width: '100%', marginRight: '10px', marginLeft: '10px', my: 2 }} >
       <TextStack/>

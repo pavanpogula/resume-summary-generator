@@ -155,6 +155,7 @@ export const AppBarStyled = materialStyled(AppBar)(({ theme }) => ({
 }));
 
 
+
 export const HeaderTitle = materialStyled(Typography)(({ theme }) => ({
   flexGrow: 1,
   color: 'black',
